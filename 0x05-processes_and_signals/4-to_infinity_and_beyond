@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Displays a string indefinitely
+c=1
+while [ $c = 1 ]; do
+  echo "To infinity and beyond"
+  sleep 2
+done

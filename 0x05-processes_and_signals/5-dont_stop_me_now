@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Stops a process using kill
+# shellcheck disable=SC2009
+program_pid=()
+readarray -t program_pid < <(pgrep -la -x "bash.*" | grep '4-to_infinity_and_beyond' | cut -d ' ' -f 1)
+for ((i = 0; i < "${#program_pid[@]}"; i++)) do
+  kill -s SIGTERM "${program_pid[i]}"
+done
